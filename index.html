@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 
-
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">   
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
     <title>Autofael - Estética Automotiva</title>
+
     <style>
         * {
             margin: 0;
@@ -14,37 +14,31 @@
             box-sizing: border-box;
             font-family: Arial, Helvetica, sans-serif;
         }
-        
+
         body {
             background: #0f0f0f;
             color: #f5f5f5;
-            line-height: 1.6;
         }
 
-
-           header img {
-            max-width: 280px;
-            /* Tamanho ideal pra logo */
-            width: 100%;
-            height: auto;
-            margin-bottom: 10px;
-            /* Gambiarra de mestre: sombra branca suave pra destacar no fundo preto */
-            filter: drop-shadow(0px 0px 8px rgba(255, 255, 255, 0.1));
+        /* HEADER */
+        header {
+            text-align: center;
+            padding: 30px;
         }
 
-        header h1 {
-            font-size: 2rem;
-            margin-bottom: 5px;
-            letter-spacing: 3px;
-            color: #e10600;
-            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
-            /* display: none;  <-- Se quiser tirar o nome e deixar só a logo, tire o comentário aqui */
+        nav button {
+            margin: 10px;
+            padding: 10px 20px;
+            background: #1a1a1a;
+            border: none;
+            color: #fff;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: 0.3s;
         }
 
-        header p {
-            font-size: 1rem;
-            color: #888;
-            font-style: italic;
+        nav button:hover {
+            background: #e10600;
         }
 
         section {
@@ -53,8 +47,7 @@
             margin: auto;
         }
 
-        section h2 {
-            font-size: 2rem;
+        h2 {
             margin-bottom: 30px;
             border-left: 5px solid #f1c40f;
             padding-left: 15px;
@@ -68,130 +61,171 @@
 
         .card {
             background: #1a1a1a;
-            padding: 25px;
+            padding: 20px;
             border-radius: 10px;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .card img {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-            border-radius: 8px;
-            margin-bottom: 10px;
+            transition: 0.3s;
         }
 
         .card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
         }
 
-        .card h3 {
+        .card img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
             margin-bottom: 10px;
-            color: #f1c40f;
         }
 
         .price {
-            margin-top: 15px;
-            font-weight: bold;
             color: #2ecc71;
+            margin-top: 10px;
         }
 
         footer {
             background: #000;
             text-align: center;
-            padding: 30px 20px;
+            padding: 30px;
             color: #aaa;
-            font-size: 0.9rem;
         }
 
-        @media (max-width: 600px) {
-            header h1 {
-                font-size: 2rem;
-            }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 999;
+            padding-top: 50px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+
+        .modal-conteudo {
+            display: block;
+            margin: auto;
+            max-width: 90%;
+            max-height: 80%;
+            border-radius: 10px;
+        }
+
+        .fechar {
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            color: white;
+            font-size: 40px;
+            cursor: pointer;
         }
     </style>
 </head>
 
 <body>
 
-    <section>
-        <h2>Lavagens</h2>
-        <div class="cards">
-            <div class="card">
-                <h3>Lavagem Simples</h3>
-                <img src="" alt="Lavagem Automativa">
-                <p>Limpeza básica, removendo sujeiras superficiais internas e externas.</p>
-                <p class="price">R$ 80 (Popular)</p>
-            </div>
-            <div class="card">
-                <h3>Lavagem Gold</h3>
-                <p>Lavagem completa com aplicação de cera líquida premium.</p>
-                <p class="price">R$ 150 (Popular)</p>
-            </div>
-            <div class="card">
-                <h3>Lavagem Premium</h3>
-                <p>Finalizada com selante cerâmico de pintura.</p>
-                <p class="price">R$ 250 (Popular)</p>
-            </div>
-            <div class="card">
-                <h3>Lavagem Diamante</h3>
-                <p>Limpeza completa + selante cerâmico e cuidado detalhado nas rodas.</p>
-                <p class="price">R$ 450 (Popular)</p>
-            </div>
-        </div>
-    </section>
+    <!-- HEADER -->
+    <header>
+        <h1>AUTOFAEL</h1>
+        <p>Estética Automotiva</p>
 
-    <section>
-        <h2>Serviços Internos</h2>
-        <div class="cards">
-            <div class="card">
-                <h3>Higienização Interna</h3>
-                <p>Limpeza e hidratação de bancos, forros e plásticos internos.</p>
-                <p class="price">A partir de R$ 350</p>
-            </div>
-            <div class="card">
-                <h3>Higienização de Bancos</h3>
-                <p>Limpeza profunda e tratamento do estofado.</p>
-                <p class="price">A partir de R$ 200</p>
-            </div>
-        </div>
-    </section>
+        <nav>
+            <button onclick="mostrarSecao('servicos')">Serviços</button>
+            <button onclick="mostrarSecao('fotos')">Fotos</button>
+        </nav>
+    </header>
 
-    <section>
-        <h2>Correção e Proteção</h2>
-        <div class="cards">
-            <div class="card">
-                <h3>Polimento Técnico</h3>
-                <p>Remove riscos, manchas e devolve o brilho da pintura.</p>
-                <p class="price">A partir de R$ 650</p>
-            </div>
-            <div class="card">
-                <h3>Vitrificação de Pintura</h3>
-                <p>Proteção cerâmica contra raios UV e agentes externos.</p>
-                <p class="price">Valor sob consulta</p>
-            </div>
-            <div class="card">
-                <h3>PPF - Paint Protection Film</h3>
-                <p>Película transparente de proteção com efeito autorregenerativo.</p>
-                <p class="price">Valor sob consulta</p>
-            </div>
-        </div>
-    </section>
+    <!-- SERVIÇOS -->
+    <div id="servicos">
+        <section>
+            <h2>Lavagens</h2>
+            <div class="cards">
+                <div class="card">
+                    <h3>🚗 Lavagem Simples</h3>
+                    <p>Limpeza básica interna e externa.</p>
+                    <p class="price">R$ 80</p>
+                </div>
 
+                <div class="card">
+                    <h3>⭐ Lavagem Gold</h3>
+                    <p>Lavagem completa com cera premium.</p>
+                    <p class="price">R$ 150</p>
+                </div>
+
+                <div class="card">
+                    <h3>🔥 Lavagem Premium</h3>
+                    <p>Com selante cerâmico.</p>
+                    <p class="price">R$ 250</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- FOTOS -->
+    <div id="fotos" style="display:none;">
+        <section>
+            <h2>Trabalhos Realizados</h2>
+
+            <div class="cards">
+                <div class="card">
+                    <img src="imagem/Camionete_Finalizada.jpeg" onclick="abrirModal(this)">
+                </div>
+
+                <div class="card">
+                    <img src="imagem/Carro_que_não_sei_nome.jpeg" onclick="abrirModal(this)">
+                </div>
+
+                <div class="card">
+                    <img src="imagem/SUV_Espuma.jpeg" onclick="abrirModal(this)">
+                </div>
+            </div>
+        </section>
+    </div>,
+
+    <!-- MODAL DA IMAGEM -->
+    <div id="modal" class="modal">
+        <span class="fechar" onclick="fecharModal()">&times;</span>
+        <img class="modal-conteudo" id="imagemModal">
+    </div>
+
+    <!-- FOOTER -->
     <footer>
-   <a href="https://wa.me/5517996807674" 
-       target="_blank" 
-       style="color: #aaa; text-decoration: none;"
-       class="d-inline-flex align-items-center gap-2">
+        <a href="https://wa.me/5517996807674" target="_blank"
+            style="color: #aaa; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;">
 
-        <i class="bi bi-whatsapp text-success"></i>
-        <span>Fale conosco: (17) 99680-7674</span>
+            <i class="bi bi-whatsapp" style="color: #25D366;"></i>
+            <span>Fale conosco: (17) 99680-7674</span>
+        </a>
 
-    </a>
-
-        <p>© 2026 Autofael - Estética Automotiva</p>
+        <p>© 2026 Autofael</p>
     </footer>
+
+    <!-- SCRIPT -->
+    <script>
+        function mostrarSecao(secao) {
+            document.getElementById('servicos').style.display = 'none';
+            document.getElementById('fotos').style.display = 'none';
+
+            document.getElementById(secao).style.display = 'block';
+        }
+    </script>
+
+    <!--Script para aumentar fotos-->
+    <script>
+        function mostrarSecao(secao) {
+            document.getElementById('servicos').style.display = 'none';
+            document.getElementById('fotos').style.display = 'none';
+
+            document.getElementById(secao).style.display = 'block';
+        }
+
+        function abrirModal(imagem) {
+            document.getElementById("modal").style.display = "block";
+            document.getElementById("imagemModal").src = imagem.src;
+        }
+
+        function fecharModal() {
+            document.getElementById("modal").style.display = "none";
+        }
+    </script>
 
 </body>
 
