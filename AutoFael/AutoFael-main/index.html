@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <title>Autofael - Estética Automotiva</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background: #0f0f0f;
+            color: #f5f5f5;
+        }
+
+
+        header {
+            text-align: center;
+            padding: 30px;
+        }
+
+        nav button {
+            margin: 10px;
+            padding: 10px 20px;
+            background: #1a1a1a;
+            border: none;
+            color: #fff;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        nav button:hover {
+            background: #e10600;
+        }
+
+        section {
+            padding: 50px 20px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        h2 {
+            margin-bottom: 30px;
+            border-left: 5px solid #f1c40f;
+            padding-left: 15px;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: #1a1a1a;
+            padding: 20px;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        .price {
+            color: #2ecc71;
+            margin-top: 10px;
+        }
+
+        footer {
+            background: #000;
+            text-align: center;
+            padding: 30px;
+            color: #aaa;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 999;
+            padding-top: 50px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+
+        .modal-conteudo {
+            display: block;
+            margin: auto;
+            max-width: 90%;
+            max-height: 80%;
+            border-radius: 10px;
+        }
+
+        .fechar {
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            color: white;
+            font-size: 40px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <h1>AUTOFAEL</h1>
+        <p>Estética Automotiva</p>
+
+        <nav>
+            <button onclick="mostrarSecao('servicos')">Serviços</button>
+            <button onclick="mostrarSecao('fotos')">Fotos</button>
+        </nav>
+    </header>
+
+    <!-- Limpeza Carro -->
+    <div id="servicos">
+        <section>
+            <h2>Lavagens Carros</h2>
+            <div class="cards">
+                <div class="card">
+                    <h3>Lavagem Simples</h3>
+                    <p>Limpeza básica, removendo apenas sujeiras superficiais
+                        internas e externas.</p><br>
+                    <p>Ideal para manutenção rápida.</p>
+
+                    <p class="price">Popular R$ 80</p>
+                    <p class="price">Caminhonete / SUVR$ 120</p>
+                </div>
+
+                <div class="card">
+                    <h3>Lavagem Gold</h3>
+                    <p>Limpeza básica, removendo apenas sujeiras superficiais
+                        internas e externas.</p><br>
+                    <p>deal para manutenção rápida</p>
+
+                    <p class="price">Popular R$ 150</p>
+                    <p class="price">Caminhonete / SUV R$ 190</p>
+                </div>
+
+                <div class="card">
+                    <h3>Lavagem Premium</h3>
+                    <p>Oferece os mesmos tramentos de uma limpeza gold</p><br>
+                    <p>Finalizado com selante cerâmico de pintura</p>
+
+                    <p class="price">Popular R$ 250</p>
+                    <p class="price">Caminhonete / SUV R$ 290</p>
+                </div>
+
+                <div class="card">
+                    <h3>Lavagem Diamante</h3>
+                    <p>Limpeza detalhada interna e externa</p><br>
+                    <p>Aplicação de selante cerâmico de pintura </p><br>
+                    <p>Retira as 4 rodas para uma limpeza mais detalhada</p><br>
+                    <p>Aplicação de protetor para caixa de rodas, criando
+                        uma camada protetora além de devolver o brilho</p>
+
+                    <p class="price">Popular R$ 450</p>
+                    <p class="price">Caminhonete / SUV R$ 550</p>
+                </div>
+            </div>
+
+            <br>
+            <br>
+            <br>
+
+            <!-- Limpeza Moto -->
+            <h2>Lavagens Motos</h2>
+            <div class="cards">
+                <div class="card">
+                    <h3>Lavagem</h3>
+                    <p>Limpeza detalhada</p><br>
+                    <p>Revitalização dos plásticos</p><br>
+
+                    <p class="price">Motos R$ 80</p>
+                </div>
+                <br>
+            <br>
+            <br>
+
+            <!-- Serviços -->
+            <h2>Serviços</h2>
+            <div class="cards">
+                <div class="card">
+                    <h3>Higenização Interna</h3>
+                    <p>Limpeza e proteção de plásticos internos</p><br>
+                    <p>Higenização e hidratação de bancos</p><br>
+                    <p>Limpeza de forros</p>
+
+                    <p class="price">Popular R$ 350</p>
+                    <p class="price">Caminhonete / SUV R$ 450</p>
+                </div>
+
+            </div>
+
+            
+                <div class="card">
+                    <h3>Polimento Técnico</h3>
+                    <p>Correção que restaura o brilho da pintura</p><br>
+                    <p>Elimina marcas de lavagem, mancha e micro risco</p><br>
+                    <p>Finaliza com delante de pintura</p>
+
+                    <p class="price">A partir de R$ 650</p>
+
+                </div>
+
+                <div class="card">
+                    <h3>Polimento de Farois</h3>
+                    <p>Restauração dos farois</p><br>
+                    <p>Devolve o brilho e a transparência das lentes</p>
+
+                    <p class="price">A partir de R$ 200</p>
+
+                </div>
+            </div>
+
+            <br>
+            <br>
+            <br>
+
+            <!--Serviços Adicionais -->
+            <h2>Serviços Adicionais</h2>
+            <div class="cards">
+
+                <div class="card">
+                    <h3>Cuidados Esternos</h3><br>
+                    <p>Cristalização De Vidros</p><br>
+                    <p>Cristalização De Pintura</p><br>
+                    <p>Descontaminação De Pintura</p><br>
+                    <p>Descontaminação Dos Vidros</p><br>
+                    <p>Revitalização De Plásticos Externos</p><br>
+                    <p>Limpeza Do Motor</p><br>
+
+                    <h3>Cuidados Internos</h3><br>
+                    <p>Higenização De Ar</p><br>
+                    <p>Higenização De Bancos</p><br>
+                    <p>Tratamento de Couros</p><br>
+                    <p>Revitalização De Plásticos Internos</p>
+
+                </div>
+            </div>
+
+            <br>
+            <br>
+            <br>
+
+            <!--Proteção -->
+            <h2>Proteção</h2>
+            <div class="cards">
+
+                <div class="card">
+                    <h3>Vitificação De Pintura</h3>
+                    <p>Tratamento E Proteção Avançada</p><br>
+                    <p>Forma Uma Camada De Revestimento Cerâmico Sobre A Pintura Do Veículo</p><br>                        
+                    <p>Protege Contra Raios UV E Outros Agentes Que Danificam A Pintura</p>                        
+
+                    <p class="price">Valor Sob Consulta</p>
+
+                </div>
+
+                <div class="card">
+                    <h3>Vitificação De Plásticos</h3>
+                    <p>Trás Proteção E Renovação Dos Plásticos Externos</p>
+
+                    <p class="price">R$ 200</p>
+
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- FOTOS -->
+    <div id="fotos" style="display:none;">
+        <section>
+            <h2>Trabalhos Realizados</h2>
+
+            <div class="cards">
+                <div class="card">
+                    <img src="imagem/Camionete_Finalizada.jpeg" onclick="abrirModal(this)">
+                </div>
+
+                <div class="card">
+                    <img src="imagem/Carro_que_não_sei_nome.jpeg" onclick="abrirModal(this)">
+                </div>
+
+                <div class="card">
+                    <img src="imagem/SUV_Espuma.jpeg" onclick="abrirModal(this)">
+                </div>
+            </div>
+        </section>
+    </div>,
+
+    <!-- MODAL DA IMAGEM -->
+    <div id="modal" class="modal">
+        <span class="fechar" onclick="fecharModal()">&times;</span>
+        <img class="modal-conteudo" id="imagemModal">
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <a href="https://wa.me/5517996807674" target="_blank"
+            style="color: #aaa; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;">
+
+            <i class="bi bi-whatsapp" style="color: #25D366;"></i>
+            <span>Fale conosco: (17) 99680-7674</span>
+        </a>
+
+        <p>© 2026 Autofael</p>
+    </footer>
+
+    <!-- SCRIPT -->
+    <script>
+        function mostrarSecao(secao) {
+            document.getElementById('servicos').style.display = 'none';
+            document.getElementById('fotos').style.display = 'none';
+
+            document.getElementById(secao).style.display = 'block';
+        }
+    </script>
+
+    <!--Script para aumentar fotos-->
+    <script>
+        function mostrarSecao(secao) {
+            document.getElementById('servicos').style.display = 'none';
+            document.getElementById('fotos').style.display = 'none';
+
+            document.getElementById(secao).style.display = 'block';
+        }
+
+        function abrirModal(imagem) {
+            document.getElementById("modal").style.display = "block";
+            document.getElementById("imagemModal").src = imagem.src;
+        }
+
+        function fecharModal() {
+            document.getElementById("modal").style.display = "none";
+        }
+    </script>
+
+</body>
+
+</html>
