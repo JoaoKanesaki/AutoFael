@@ -4,120 +4,291 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
-    <title>Autofael - Estética Automotiva</title>
+    <<link rel="preconnect" href="https://fonts.googleapis.com">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+            rel="stylesheet">
+        <title>Autofael - Estética Automotiva</title>
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, Helvetica, sans-serif;
-        }
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                font-family: "Poppins", sans-serif;
+            }
 
-        body {
-            background: #0f0f0f;
-            color: #f5f5f5;
-        }
+            body {
+                background:
+                    linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.92)),
+                    url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1600&auto=format&fit=crop');
 
-        /* HEADER */
-        header {
-            text-align: center;
-            padding: 30px;
-        }
+                background-size: cover;
+                background-position: center;
+                background-attachment: fixed;
 
-        nav button {
-            margin: 10px;
-            padding: 10px 20px;
-            background: #1a1a1a;
-            border: none;
-            color: #fff;
-            cursor: pointer;
-            border-radius: 5px;
-            transition: 0.3s;
-        }
+                color: #f5f5f5;
+            }
 
-        nav button:hover {
-            background: #e10600;
-        }
+            /* HEADER */
 
-        section {
-            padding: 50px 20px;
-            max-width: 1100px;
-            margin: auto;
-        }
+            header {
+                text-align: center;
+                padding: 60px 20px 40px;
+            }
 
-        h2 {
-            margin-bottom: 30px;
-            border-left: 5px solid #f1c40f;
-            padding-left: 15px;
-        }
+            header h1 {
+                font-size: 3.5rem;
+                color: #f1c40f;
+                letter-spacing: 4px;
+                margin-bottom: 10px;
+            }
 
-        .cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
+            header p {
+                color: #ccc;
+                font-size: 1.1rem;
+            }
 
-        .card {
-            background: #1a1a1a;
-            padding: 20px;
-            border-radius: 10px;
-            transition: 0.3s;
-        }
+            /* NAV */
 
-        .card:hover {
-            transform: translateY(-5px);
-        }
+            nav {
+                margin-top: 30px;
+            }
 
-        .card img {
-            width: 100%;
-            height: auto;
-            border-radius: 8px;
-            margin-bottom: 10px;
-        }
+            nav button {
+                padding: 12px 28px;
+                margin: 8px;
+                border: none;
+                border-radius: 40px;
 
-        .price {
-            color: #2ecc71;
-            margin-top: 10px;
-        }
+                background: linear-gradient(135deg, #f1c40f, #d4ac0d);
 
-        footer {
-            background: #000;
-            text-align: center;
-            padding: 30px;
-            color: #aaa;
-        }
+                color: #000;
+                font-weight: bold;
+                font-size: 15px;
 
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 999;
-            padding-top: 50px;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.9);
-        }
+                cursor: pointer;
+                transition: 0.3s;
+            }
 
-        .modal-conteudo {
-            display: block;
-            margin: auto;
-            max-width: 90%;
-            max-height: 80%;
-            border-radius: 10px;
-        }
+            nav button:hover {
+                transform: translateY(-3px) scale(1.03);
+                box-shadow: 0 0 20px rgba(241, 196, 15, 0.5);
+            }
 
-        .fechar {
-            position: absolute;
-            top: 20px;
-            right: 35px;
-            color: white;
-            font-size: 40px;
-            cursor: pointer;
-        }
-    </style>
+            /* SECTION */
+
+            section {
+                max-width: 1200px;
+                margin: auto;
+                padding: 50px 20px;
+            }
+
+            /* TITULOS */
+
+            h2 {
+                font-size: 2rem;
+                margin-bottom: 30px;
+
+                border-left: 5px solid #f1c40f;
+                padding-left: 15px;
+
+                color: #fff;
+            }
+
+            /* CARDS */
+
+            .cards {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                gap: 25px;
+            }
+
+            .card {
+                background: rgba(20, 20, 20, 0.85);
+
+                border: 1px solid rgba(255, 255, 255, 0.08);
+
+                backdrop-filter: blur(10px);
+
+                border-radius: 18px;
+
+                padding: 25px;
+
+                transition: 0.35s;
+
+                overflow: hidden;
+
+                position: relative;
+            }
+
+            .card::before {
+                content: "";
+
+                position: absolute;
+                top: 0;
+                left: 0;
+
+                width: 100%;
+                height: 4px;
+
+                background: linear-gradient(to right, #f1c40f, #ffd700);
+            }
+
+            .card:hover {
+                transform: translateY(-8px);
+
+                box-shadow:
+                    0 10px 25px rgba(0, 0, 0, 0.5),
+                    0 0 20px rgba(241, 196, 15, 0.15);
+            }
+
+            .card h3 {
+                color: #f1c40f;
+                margin-bottom: 15px;
+                font-size: 1.4rem;
+            }
+
+            .card p {
+                color: #d6d6d6;
+                line-height: 1.6;
+                font-size: 15px;
+            }
+
+            /* PREÇOS */
+
+            .price {
+                margin-top: 12px;
+
+                color: #2ecc71 !important;
+
+                font-size: 1.1rem;
+                font-weight: bold;
+
+                border-top: 1px solid rgba(255, 255, 255, 0.08);
+
+                padding-top: 10px;
+            }
+
+            /* IMAGENS */
+
+            .card img {
+                width: 100%;
+                height: 240px;
+
+                object-fit: cover;
+
+                border-radius: 12px;
+
+                transition: 0.4s;
+            }
+
+            .card img:hover {
+                transform: scale(1.03);
+            }
+
+            /* FOOTER */
+
+            footer {
+                margin-top: 60px;
+
+                background: rgba(0, 0, 0, 0.8);
+
+                text-align: center;
+
+                padding: 35px 20px;
+
+                border-top: 1px solid rgba(255, 255, 255, 0.08);
+            }
+
+            footer a {
+                color: #fff !important;
+                text-decoration: none;
+
+                font-size: 1rem;
+
+                transition: 0.3s;
+            }
+
+            footer a:hover {
+                color: #f1c40f !important;
+            }
+
+            footer p {
+                margin-top: 15px;
+                color: #888;
+            }
+
+            /* MODAL */
+
+            .modal {
+                display: none;
+
+                position: fixed;
+                z-index: 999;
+
+                left: 0;
+                top: 0;
+
+                width: 100%;
+                height: 100%;
+
+                background: rgba(0, 0, 0, 0.95);
+            }
+
+            .modal-conteudo {
+                display: block;
+
+                margin: 50px auto;
+
+                max-width: 85%;
+                max-height: 80%;
+
+                border-radius: 15px;
+
+                box-shadow: 0 0 40px rgba(0, 0, 0, 0.8);
+            }
+
+            .fechar {
+                position: absolute;
+
+                top: 20px;
+                right: 35px;
+
+                color: white;
+
+                font-size: 45px;
+
+                cursor: pointer;
+            }
+
+            /* RESPONSIVO */
+
+            @media(max-width: 768px) {
+
+                header h1 {
+                    font-size: 2.5rem;
+                }
+
+                h2 {
+                    font-size: 1.5rem;
+                }
+
+                .card {
+                    padding: 20px;
+                }
+
+                nav button {
+                    width: 100%;
+                    max-width: 300px;
+                }
+
+                .card {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                }
+            }
+        </style>
 </head>
 
 <body>
@@ -195,14 +366,13 @@
                     <p class="price">Motos R$ 80</p>
                 </div>
             </div>
-
             <br>
             <br>
             <br>
 
             <!-- Serviços -->
-             <h2>Serviços</h2>
-              <div class="cards">
+            <h2>Serviços</h2>
+            <div class="cards">
                 <div class="card">
                     <h3>Higenização Interna</h3>
                     <p>Limpeza e proteção de plásticos internos</p><br>
@@ -213,6 +383,9 @@
                     <p class="price">Caminhonete / SUV R$ 450</p>
                 </div>
 
+
+
+
                 <div class="card">
                     <h3>Polimento Técnico</h3>
                     <p>Correção que restaura o brilho da pintura</p><br>
@@ -220,17 +393,69 @@
                     <p>Finaliza com delante de pintura</p>
 
                     <p class="price">A partir de R$ 650</p>
-                   
+
                 </div>
 
-                 <div class="card">
+                <div class="card">
                     <h3>Polimento de Farois</h3>
-                    <p>Correção que restaura o brilho da pintura</p><br>
-                    <p>Elimina marcas de lavagem, mancha e micro risco</p><br>
-                    <p>Finaliza com delante de pintura</p>
+                    <p>Restauração dos farois</p><br>
+                    <p>Devolve o brilho e a transparência das lentes</p>
 
-                    <p class="price">A partir de R$ 650</p>
-                   
+                    <p class="price">A partir de R$ 200</p>
+
+                </div>
+
+            </div>
+            <br>
+            <br>
+            <br>
+
+            <!--Serviços Adicionais -->
+            <h2>Serviços Adicionais</h2>
+            <div class="cards">
+
+                <div class="card">
+                    <h3>Cuidados Esternos</h3><br>
+                    <p>Cristalização De Vidros</p><br>
+                    <p>Cristalização De Pintura</p><br>
+                    <p>Descontaminação De Pintura</p><br>
+                    <p>Descontaminação Dos Vidros</p><br>
+                    <p>Revitalização De Plásticos Externos</p><br>
+                    <p>Limpeza Do Motor</p><br>
+
+                    <h3>Cuidados Internos</h3><br>
+                    <p>Higenização De Ar</p><br>
+                    <p>Higenização De Bancos</p><br>
+                    <p>Tratamento de Couros</p><br>
+                    <p>Revitalização De Plásticos Internos</p>
+
+                </div>
+            </div>
+
+            <br>
+            <br>
+            <br>
+
+            <!--Proteção -->
+            <h2>Proteção</h2>
+            <div class="cards">
+
+                <div class="card">
+                    <h3>Vitificação De Pintura</h3>
+                    <p>Tratamento E Proteção Avançada</p><br>
+                    <p>Forma Uma Camada De Revestimento Cerâmico Sobre A Pintura Do Veículo</p><br>
+                    <p>Protege Contra Raios UV E Outros Agentes Que Danificam A Pintura</p>
+
+                    <p class="price">Valor Sob Consulta</p>
+
+                </div>
+
+                <div class="card">
+                    <h3>Vitificação De Plásticos</h3>
+                    <p>Trás Proteção E Renovação Dos Plásticos Externos</p>
+
+                    <p class="price">R$ 200</p>
+
                 </div>
             </div>
 
